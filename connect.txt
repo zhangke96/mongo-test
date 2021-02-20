@@ -1,0 +1,53 @@
+有效数据开始0040 + 3
+struct MsgHeader {
+  int32 messageLength;
+  int32 requestId;
+  int32 responseTo;
+  int32 opCode;
+};
+
+mesaageLength 0x167   359
+requestId 0x1  1
+responseTo 0x0 0
+opCode 0x7d4  2004  OP_QUERY
+
+sturct {
+  MsgHeader header;
+  int32 responseFlags;
+  int64 cursorID;
+  int32 staringFrom;
+  int32 numberReturned;
+  document *documents;
+};
+
+responseFlag 0x04   bit 2 set  2 corresponds to ShardConfigStale. Drivers should ignore this. Only mongos will ever see this set, in which case, it needs to update config from the server.
+cursorID  
+
+
+0000   00 00 00 00 00 00 00 00 00 00 00 00 08 00 45 00   ..............E.
+0010   01 9b c0 a0 40 00 40 06 7a ba 7f 00 00 01 7f 00   ....@.@.z.......
+0020   00 01 ad 32 69 89 75 7a 37 a0 bf b2 96 1b 80 18   ...2i.uz7.......
+0030   02 00 ff 8f 00 00 01 01 08 0a c4 fa f5 8b c4 fa   ................
+0040   f5 8b 67 01 00 00 01 00 00 00 00 00 00 00 d4 07   ..g.............
+0050   00 00 04 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64   ......admin.$cmd
+0060   00 00 00 00 00 ff ff ff ff 40 01 00 00 10 69 73   .........@....is
+0070   4d 61 73 74 65 72 00 01 00 00 00 03 63 6c 69 65   Master......clie
+0080   6e 74 00 13 01 00 00 03 61 70 70 6c 69 63 61 74   nt......applicat
+0090   69 6f 6e 00 1f 00 00 00 02 6e 61 6d 65 00 10 00   ion......name...
+00a0   00 00 63 6f 6e 6e 65 63 74 2d 65 78 61 6d 70 6c   ..connect-exampl
+00b0   65 00 00 03 64 72 69 76 65 72 00 2a 00 00 00 02   e...driver.*....
+00c0   6e 61 6d 65 00 07 00 00 00 6d 6f 6e 67 6f 63 00   name.....mongoc.
+00d0   02 76 65 72 73 69 6f 6e 00 07 00 00 00 31 2e 31   .version.....1.1
+00e0   37 2e 34 00 00 03 6f 73 00 52 00 00 00 02 74 79   7.4...os.R....ty
+00f0   70 65 00 06 00 00 00 4c 69 6e 75 78 00 02 6e 61   pe.....Linux..na
+0100   6d 65 00 07 00 00 00 55 62 75 6e 74 75 00 02 76   me.....Ubuntu..v
+0110   65 72 73 69 6f 6e 00 06 00 00 00 32 30 2e 30 34   ersion.....20.04
+0120   00 02 61 72 63 68 69 74 65 63 74 75 72 65 00 07   ..architecture..
+0130   00 00 00 78 38 36 5f 36 34 00 00 02 70 6c 61 74   ...x86_64...plat
+0140   66 6f 72 6d 00 4c 00 00 00 63 66 67 3d 30 78 30   form.L...cfg=0x0
+0150   32 32 31 35 65 61 30 65 39 20 70 6f 73 69 78 3d   2215ea0e9 posix=
+0160   32 30 30 38 30 39 20 73 74 64 63 3d 32 30 31 37   200809 stdc=2017
+0170   31 30 20 43 43 3d 47 43 43 20 39 2e 33 2e 30 20   10 CC=GCC 9.3.0 
+0180   43 46 4c 41 47 53 3d 22 22 20 4c 44 46 4c 41 47   CFLAGS="" LDFLAG
+0190   53 3d 22 22 00 00 04 63 6f 6d 70 72 65 73 73 69   S=""...compressi
+01a0   6f 6e 00 05 00 00 00 00 00                        on.......
