@@ -19,5 +19,18 @@ target_link_libraries(InsertTest PRIVATE mongo::mongoc_static mongo::bson_static
 
 add_executable(QueryTest query_test.cpp)
 
+target_link_libraries(QueryTest PRIVATE mongo::mongoc_static mongo::bson_static)
+
+add_executable(CountTest collection_count.cpp)
+target_link_libraries(CountTest PRIVATE mongo::mongoc_static mongo::bson_static)
+
+add_executable(InsertBulk insert_batch.cpp)
+target_link_libraries(InsertBulk PRIVATE mongo::mongoc_static mongo::bson_static)
 # target_link_libraries(QueryTest)
 # target_link_libraries(QueryTest PRIVATE mongo::mongoc_static mongo::bson_static)
+
+add_executable(DeleteTest delete_test.cpp)
+target_link_libraries(DeleteTest PRIVATE mongo::mongoc_static mongo::bson_static)
+
+add_executable(UpdateTest update_test.cpp)
+target_link_libraries(UpdateTest PRIVATE mongo::mongoc_static mongo::bson_static)
